@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 0.2fr;
+  grid-template-rows: 2.1fr 0.3fr 4fr 0.5fr;
+  grid-template-areas: "title hamburguer" "header header" "content content" "footer footer";
+  grid-row-gap: 0.1em;
+}
+
+.title {
+  grid-area: title;
+  text-align: center;
+
+}
+
+.hamburguer {
+  grid-area: hamburguer;
+  text-align: center;
+}
+
+.header {
+  grid-area: header;
+  text-align: center;
+  position: relative;
+}
+.sidebar{
+
+}
+.content {
+  grid-area: content;
+  display: grid;
+  text-align: center;
+}
+
+.footer {
+  grid-area: footer;
+  text-align: center;
+}
+
+.grid div:nth-child(even) {
+  background-color: rgba(233, 233, 232, 0.88);
+}
+
+.grid div:nth-child(odd) {
+  background-color: rgb(130, 176, 173);
+}
+
+@media screen and (min-width: 1000px) {
+  .menu-on, .menu-off{
+    display: none;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 1fr;
+    grid-template-rows: 0.5fr 0.4fr 0.2fr 1fr 1fr;
+    grid-template-areas: ". title title ." ". navbar navbar ." ". header header ."". content content ." ". footer footer .";
+    grid-gap: 0.1vw;
+  }
+
+}
